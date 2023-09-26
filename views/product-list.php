@@ -3,8 +3,12 @@ include_once "../database.php";
 
 if (isset($_REQUEST['action'])) {
     $productId = $_REQUEST['pId'];
-    deleteProduct($productId);
-    header('Location: ./product-list.php');
+    try {
+        deleteProduct($productId);
+        header('Location: ./product-list.php');
+    }catch (PDOException $e) {
+        echo '<script type="text/javascript"> alert("Error")</script>';
+    }
 }
 // doc du lieu database
 $result = getPrducts();
