@@ -34,7 +34,7 @@ $result = getCustomer();
 <body>
 <a href="./index.php">View customers</a>
 <a href="">View orders</a>
-<a href="">View products</a>
+<a href="./views/product-list.php">View products</a>
 
 <table>
     <caption><h2>Customer list</h2><p>Total: <?php echo count($result) ?> customer</p></caption>
@@ -51,7 +51,7 @@ $result = getCustomer();
         <td><?php echo $customer['customerName']?></td>
         <td><?php echo $customer['phone'] ?></td>
         <td><?php echo $customer['city'] ?></td>
-        <td><a href="./view-order.php?cID=<?php echo $customer['customerNumber'] ?>">View orders</a></td>
+        <td><a href="views/order-list.php?cID=<?php echo $customer['customerNumber'] ?>">View orders</a></td>
     </tr>
     <?php endforeach; ?>
 </table>

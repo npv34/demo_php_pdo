@@ -1,5 +1,5 @@
 <?php
-include_once "./database.php";
+include_once "../database.php";
 
 $cID = $_GET['cID'];
 
@@ -36,7 +36,7 @@ $result = getOrderByCustomerId($cID)
 </head>
 <body>
 <h3>Customer had <?php echo count($result) ?> orders</h3>
-<a href="./index.php">Back</a>
+<a href="../index.php">Back</a>
 <table>
     <caption><h2>List order</h2></caption>
     <tr id="table-header">
